@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Thilagaraj Mama & Jaya Chinna</title>
+
+<style>
+/* Body & background */
+body {
+  margin:0;
+  height:100vh;
+  overflow:hidden;
+  font-family:"Georgia", serif;
+  background: linear-gradient(180deg, #fceabb, #f8b500);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 248, 225, 0.95);
+  border-radius:30px;
+  padding:50px;
+  text-align:center;
+  box-shadow:0 25px 50px rgba(0,0,0,0.4);
+  border:6px solid #d4af37;
+  position: relative;
+  z-index: 2;
+}
+
+/* Message text */
+.message {
+  font-size:24px;
+  font-weight:bold;
+  color:#6a1b1a;
+  line-height:1.6;
+}
+
+/* Floating diyas */
+.diya {
+  position:absolute;
+  font-size:50px;
+  animation:flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+  from{opacity:0.8;}
+  to{opacity:1;}
+}
+
+/* Balloons */
+.balloon {
+  position:absolute;
+  font-size:40px;
+  animation:rise linear infinite;
+}
+@keyframes rise {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-100px);}
+}
+
+/* Confetti petals */
+.petals {
+  position:absolute;
+  font-size:30px;
+  animation:fall linear infinite;
+  opacity:0.9;
+}
+@keyframes fall {
+  0% {transform: translateY(-50px) rotate(0deg);}
+  100% {transform: translateY(100vh) rotate(360deg);}
+}
+
+/* Fireworks */
+.firework {
+  position:absolute;
+  font-size:30px;
+  animation:explode 1s ease-out forwards;
+}
+@keyframes explode {
+  0% {transform: scale(0); opacity:1;}
+  100% {transform: scale(3); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Card with message -->
+<div class="card">
+  <div class="message">
+    🙏 May God bless you both with long life, prosperity,<br>
+    good health, and endless joy 🙏<br>
+    With love, respect, and heartfelt wishes ❤️
+  </div>
+</div>
+
+<!-- Diyas -->
+<div class="diya" style="left:10%; top:70%;">🪔</div>
+<div class="diya" style="left:80%; top:70%;">🪔</div>
+<div class="diya" style="left:50%; top:75%;">🪔</div>
+
+<!-- Balloons -->
+<div class="balloon" style="left:20%;">🎈</div>
+<div class="balloon" style="left:40%;">🎈</div>
+<div class="balloon" style="left:60%;">🎈</div>
+<div class="balloon" style="left:80%;">🎈</div>
+
+<!-- Petals -->
+<div class="petals" style="left:5%;">🌸</div>
+<div class="petals" style="left:15%;">🌺</div>
+<div class="petals" style="left:30%;">🌸</div>
+<div class="petals" style="left:50%;">🌺</div>
+<div class="petals" style="left:70%;">🌸</div>
+<div class="petals" style="left:85%;">🌺</div>
+
+<!-- Fireworks -->
+<div class="firework" style="left:30%; top:20%;">🎆</div>
+<div class="firework" style="left:70%; top:25%;">🎇</div>
+
+<!-- Background music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Randomize balloon rise duration
+const balloons = document.querySelectorAll('.balloon');
+balloons.forEach(b => {
+  b.style.animationDuration = (Math.random()*5 + 5) + 's';
+});
+
+// Randomize petal fall duration
+const petals = document.querySelectorAll('.petals');
+petals.forEach(p => {
+  p.style.animationDuration = (Math.random()*5 + 5) + 's';
+});
+
+// Fireworks repeat every 3s
+setInterval(() => {
+  const fw1 = document.createElement('div');
+  fw1.className = 'firework';
+  fw1.style.left = Math.random()*90 + '%';
+  fw1.style.top = Math.random()*40 + '%';
+  fw1.textContent = '🎆';
+  document.body.appendChild(fw1);
+  setTimeout(()=>fw1.remove(),1000);
+}, 3000);
+</script>
+
+</body>
+</html>
